@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Play } from 'lucide-react';
 
 export default function SlotMachine({ students, secretOrder, setSecretOrder, pickedStudents, setPickedStudents, isPicking, setIsPicking }) {
   const [pickCount, setPickCount] = useState(1);
@@ -103,7 +102,7 @@ export default function SlotMachine({ students, secretOrder, setSecretOrder, pic
             style={{ width: '80px' }}
           />
           <button className="btn-primary" onClick={startPicking} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <Play size={16} fill="white" /> 발표자 선발
+            <span className="material-symbols-outlined" style={{fontSize: '18px'}}>play_arrow</span> 발표자 선발
           </button>
         </div>
       ) : remainingCount === 0 ? (

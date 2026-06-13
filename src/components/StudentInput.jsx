@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import SecretModal from './SecretModal';
-import { Users, UserPlus, Trash2 } from 'lucide-react';
-
-export default function StudentInput({ students, setStudents, secretOrder, setSecretOrder, setPickedStudents }) {
+import SecretModal from './SecretModal';export default function StudentInput({ students, setStudents, secretOrder, setSecretOrder, setPickedStudents }) {
   const [inputText, setInputText] = useState('');
   const [showSecretModal, setShowSecretModal] = useState(false);
 
@@ -38,7 +35,7 @@ export default function StudentInput({ students, setStudents, secretOrder, setSe
   return (
     <div className="card">
       <h2 className="card-title">
-        <Users size={20} /> 학생 명단
+        <span className="material-symbols-outlined" style={{fontSize: '20px'}}>group</span> 학생 명단
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -51,11 +48,11 @@ export default function StudentInput({ students, setStudents, secretOrder, setSe
         <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
           {students.length > 0 && (
             <button className="btn-utility" onClick={clearAll} style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <Trash2 size={14} /> 전체 삭제
+              <span className="material-symbols-outlined" style={{fontSize: '16px'}}>delete</span> 전체 삭제
             </button>
           )}
           <button className="btn-primary" onClick={handleAdd} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <UserPlus size={16} /> 추가
+            <span className="material-symbols-outlined" style={{fontSize: '18px'}}>person_add</span> 추가
           </button>
         </div>
       </div>

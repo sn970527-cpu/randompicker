@@ -1,4 +1,3 @@
-import { X, ShieldAlert } from 'lucide-react';
 
 export default function SecretModal({ students, secretOrder, setSecretOrder, onClose }) {
 
@@ -15,10 +14,10 @@ export default function SecretModal({ students, secretOrder, setSecretOrder, onC
       <div className="modal-card">
         <div className="modal-header">
           <h2 className="card-title" style={{ margin: 0 }}>
-            <ShieldAlert size={20} /> 비밀 설정
+            <span className="material-symbols-outlined" style={{fontSize: '20px'}}>warning</span> 비밀 설정
           </h2>
           <button className="modal-close" onClick={onClose}>
-            <X size={20} />
+            <span className="material-symbols-outlined" style={{fontSize: '20px'}}>close</span>
           </button>
         </div>
 

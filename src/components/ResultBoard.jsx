@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { RotateCcw } from 'lucide-react';
 
 export default function ResultBoard({ pickedStudents, setPickedStudents }) {
 
@@ -30,7 +29,7 @@ export default function ResultBoard({ pickedStudents, setPickedStudents }) {
 
       <div style={{ textAlign: 'center' }}>
         <button className="btn-secondary" onClick={() => setPickedStudents([])} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-          <RotateCcw size={16} /> 결과 초기화
+          <span className="material-symbols-outlined" style={{fontSize: '18px'}}>refresh</span> 결과 초기화
         </button>
       </div>
     </div>
