@@ -1,3 +1,66 @@
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
 :root {
   --primary: #0066cc;
   --primary-focus: #0071e3;
@@ -23,7 +86,7 @@
 }
 
 body {
-  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--canvas-parchment);
   color: var(--ink);
   min-height: 100vh;
@@ -34,7 +97,7 @@ body {
 }
 
 button {
-  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   cursor: pointer;
   border: none;
   background: none;
@@ -80,7 +143,7 @@ button.btn-utility {
 }
 
 input, textarea {
-  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--canvas);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: var(--ink);
@@ -134,7 +197,7 @@ input:focus, textarea:focus {
 }
 
 .page-title {
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.1;
@@ -144,7 +207,7 @@ input:focus, textarea:focus {
 }
 
 .page-subtitle {
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.14;
@@ -161,7 +224,7 @@ input:focus, textarea:focus {
 }
 
 .card-title {
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
   font-size: 21px;
   font-weight: 600;
   line-height: 1.19;
@@ -191,7 +254,7 @@ input:focus, textarea:focus {
 }
 
 .slot-name {
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.1;
@@ -227,7 +290,7 @@ input:focus, textarea:focus {
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.224px;
-  font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
 }
 
 .chip button {
@@ -258,7 +321,7 @@ input:focus, textarea:focus {
 }
 
 .result-item-index {
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
   font-size: 21px;
   font-weight: 600;
   color: var(--primary);
@@ -267,7 +330,7 @@ input:focus, textarea:focus {
 }
 
 .result-item-name {
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
   font-size: 21px;
   font-weight: 600;
   letter-spacing: 0.231px;
@@ -375,7 +438,7 @@ input:focus, textarea:focus {
   letter-spacing: -0.224px;
   cursor: pointer;
   transition: transform 0.1s;
-  font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+  font-family: "Paperozi", system-ui, -apple-system, sans-serif;
 }
 
 .secret-chip-btn.selected {
