@@ -1,15 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-
 :root {
-  --grass-dark: #2E7D32;
-  --grass-light: #388E3C;
-  --turf-line: rgba(255, 255, 255, 0.4);
-  --primary: #FFD700; /* Gold */
-  --secondary: #1E3A8A; /* Deep blue */
-  --accent: #E11D48; /* Red for alerts */
-  --text: #ffffff;
-  --card-bg: rgba(0, 0, 0, 0.75); /* Dark scoreboard feel */
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --primary: #0066cc;
+  --primary-focus: #0071e3;
+  --primary-on-dark: #2997ff;
+  --ink: #1d1d1f;
+  --ink-muted-80: #333333;
+  --ink-muted-48: #7a7a7a;
+  --body-muted: #cccccc;
+  --canvas: #ffffff;
+  --canvas-parchment: #f5f5f7;
+  --surface-pearl: #fafafc;
+  --surface-black: #000000;
+  --hairline: #e0e0e0;
+  --divider-soft: #f0f0f0;
+  --on-dark: #ffffff;
+  --on-primary: #ffffff;
 }
 
 * {
@@ -19,107 +23,407 @@
 }
 
 body {
-  font-family: 'Jua', sans-serif;
-  background-color: var(--grass-dark);
-  /* Turf stripes pattern */
-  background-image: repeating-linear-gradient(
-    0deg,
-    var(--grass-dark),
-    var(--grass-dark) 50px,
-    var(--grass-light) 50px,
-    var(--grass-light) 100px
-  );
-  color: var(--text);
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--canvas-parchment);
+  color: var(--ink);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
 }
 
 button {
-  font-family: 'Jua', sans-serif;
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   cursor: pointer;
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 4px 0 rgba(255,255,255,0.3);
-  font-weight: bold;
+  border: none;
+  background: none;
+  transition: transform 0.1s ease, opacity 0.1s ease;
 }
 
 button:active {
-  transform: translateY(4px);
-  box-shadow: 0 0 0 rgba(255,255,255,0.3);
+  transform: scale(0.95);
 }
 
-button.primary {
+button.btn-primary {
   background-color: var(--primary);
-  color: #000;
-  border-color: #B8860B;
-  box-shadow: 0 4px 0 #B8860B;
+  color: var(--on-primary);
+  border-radius: 9999px;
+  padding: 11px 22px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
 }
 
-button.primary:active {
-  box-shadow: 0 0 0 #B8860B;
+button.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 9999px;
+  padding: 11px 22px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
 }
 
-button.secondary {
-  background-color: var(--secondary);
-  color: white;
-  border-color: #0F172A;
-  box-shadow: 0 4px 0 #0F172A;
-}
-
-button.secondary:active {
-  box-shadow: 0 0 0 #0F172A;
+button.btn-utility {
+  background-color: var(--ink);
+  color: var(--on-dark);
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
 }
 
 input, textarea {
-  font-family: 'Jua', sans-serif;
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 1rem;
+  font-family: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--canvas);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
   outline: none;
-  background: rgba(255,255,255,0.95);
-  color: #333;
-  transition: box-shadow 0.2s;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+input {
+  border-radius: 9999px;
+  padding: 12px 20px;
+  height: 44px;
+}
+
+textarea {
+  border-radius: 11px;
+  padding: 12px 16px;
+  resize: vertical;
 }
 
 input:focus, textarea:focus {
-  box-shadow: 0 0 10px var(--primary);
+  border-color: var(--primary);
+  outline: 2px solid var(--primary-focus);
+  outline-offset: 2px;
 }
 
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  padding: 24px;
-  box-shadow: var(--shadow);
-  border: 3px solid var(--turf-line);
+.app-nav {
+  background-color: var(--surface-black);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.title {
+.app-nav-title {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: var(--on-dark);
+}
+
+.page-hero {
   text-align: center;
-  font-size: 3.5rem;
+  padding: 48px 24px 32px;
+}
+
+.page-title {
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.196px;
+  color: var(--ink-muted-48);
+}
+
+.card {
+  background-color: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+  color: var(--ink);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slot-display {
+  background-color: var(--canvas-parchment);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 32px 24px;
+  transition: background-color 0.3s;
+}
+
+.slot-display.spinning {
+  background-color: var(--canvas);
+}
+
+.slot-name {
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--ink-muted-48);
+  text-align: center;
+}
+
+.slot-name.active {
+  color: var(--ink);
+  animation: revealIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.slot-name.picked {
   color: var(--primary);
-  text-shadow: 3px 3px 0 #000;
-  margin-bottom: 2rem;
-  animation: float 3s ease-in-out infinite;
-  letter-spacing: 2px;
+  animation: revealIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@keyframes revealIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-@keyframes goalZoom {
-  0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
-  50% { transform: scale(1.3) rotate(5deg); opacity: 1; color: var(--primary); }
-  100% { transform: scale(1) rotate(0deg); opacity: 1; color: var(--text); }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--canvas);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+  font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
 }
 
-.goal-text {
-  animation: goalZoom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+.chip button {
+  color: var(--ink-muted-48);
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  margin-top: -1px;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.result-item {
+  background-color: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: bounceIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
+}
+
+.result-item-index {
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 28px;
+  text-align: center;
+}
+
+.result-item-name {
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.231px;
+  color: var(--ink);
+}
+
+@keyframes bounceIn {
+  0% { transform: translateY(8px); opacity: 0; }
+  70% { transform: translateY(-2px); opacity: 1; }
+  100% { transform: translateY(0); }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.48);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-card {
+  background-color: var(--canvas);
+  border-radius: 18px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-close {
+  color: var(--ink-muted-48);
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background-color: var(--divider-soft);
+}
+
+.modal-body {
+  font-size: 14px;
+  color: var(--ink-muted-48);
+  letter-spacing: -0.224px;
+  margin-bottom: 16px;
+  line-height: 1.43;
+}
+
+.secret-order-list {
+  background-color: var(--canvas-parchment);
+  border: 1px solid var(--hairline);
+  border-radius: 11px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.secret-order-list strong {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.224px;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.secret-order-list ol {
+  margin-left: 20px;
+  color: var(--primary);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.secret-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 260px;
+  padding: 4px;
+}
+
+.secret-chip-btn {
+  position: relative;
+  background-color: var(--canvas);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  letter-spacing: -0.224px;
+  cursor: pointer;
+  transition: transform 0.1s;
+  font-family: "SF Pro Text", system-ui, -apple-system, sans-serif;
+}
+
+.secret-chip-btn.selected {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+.order-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--ink);
+  color: var(--on-dark);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 11px;
+  border: 2px solid var(--canvas);
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pick-count-label {
+  font-size: 17px;
+  color: var(--ink-muted-48);
+  letter-spacing: -0.374px;
+}
+
+.pick-count-input {
+  width: 80px !important;
+  text-align: center;
+  border-radius: 9999px !important;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px 24px;
+  color: var(--ink-muted-48);
+  font-size: 17px;
 }

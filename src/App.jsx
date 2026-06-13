@@ -13,7 +13,7 @@ function App() {
     const saved = localStorage.getItem('randomPicker_secretOrder');
     return saved ? JSON.parse(saved) : [];
   });
-  
+
   const [pickedStudents, setPickedStudents] = useState([]);
   const [isPicking, setIsPicking] = useState(false);
 
@@ -26,38 +26,47 @@ function App() {
   }, [secretOrder]);
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', width: '100%' }}>
-      <h1 className="title">⚽ 슈팅! 발표자 라인업 ⚽</h1>
-      
-      {!isPicking && pickedStudents.length === 0 && (
-        <StudentInput 
-          students={students} 
-          setStudents={setStudents}
-          secretOrder={secretOrder}
-          setSecretOrder={setSecretOrder}
-          setPickedStudents={setPickedStudents}
-        />
-      )}
+    <>
+      <nav className="app-nav">
+        <span className="app-nav-title">발표자 뽑기</span>
+      </nav>
 
-      {students.length > 0 && (
-        <SlotMachine 
-          students={students}
-          secretOrder={secretOrder}
-          setSecretOrder={setSecretOrder}
-          pickedStudents={pickedStudents}
-          setPickedStudents={setPickedStudents}
-          isPicking={isPicking}
-          setIsPicking={setIsPicking}
-        />
-      )}
+      <div style={{ padding: '0 24px 80px', maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+        <div className="page-hero">
+          <h1 className="page-title">발표자 뽑기</h1>
+          <p className="page-subtitle">무작위로 발표자를 선발합니다</p>
+        </div>
 
-      {pickedStudents.length > 0 && (
-        <ResultBoard 
-          pickedStudents={pickedStudents} 
-          setPickedStudents={setPickedStudents}
-        />
-      )}
-    </div>
+        {!isPicking && pickedStudents.length === 0 && (
+          <StudentInput
+            students={students}
+            setStudents={setStudents}
+            secretOrder={secretOrder}
+            setSecretOrder={setSecretOrder}
+            setPickedStudents={setPickedStudents}
+          />
+        )}
+
+        {students.length > 0 && (
+          <SlotMachine
+            students={students}
+            secretOrder={secretOrder}
+            setSecretOrder={setSecretOrder}
+            pickedStudents={pickedStudents}
+            setPickedStudents={setPickedStudents}
+            isPicking={isPicking}
+            setIsPicking={setIsPicking}
+          />
+        )}
+
+        {pickedStudents.length > 0 && (
+          <ResultBoard
+            pickedStudents={pickedStudents}
+            setPickedStudents={setPickedStudents}
+          />
+        )}
+      </div>
+    </>
   );
 }
 
