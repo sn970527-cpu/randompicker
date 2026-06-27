@@ -4,126 +4,268 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 20px;
+  padding: 24px;
   box-sizing: border-box;
-  backdrop-filter: blur(5px);
+  overflow-y: auto;
 }
 
 .ethics-gate-container {
-  background: white;
-  border-radius: 16px;
-  max-width: 800px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  max-width: 900px;
   width: 100%;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.ethics-header {
+  padding: 32px 32px 24px;
+  background: linear-gradient(90deg, #f89b00 0%, #f37021 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.ethics-header-decoration {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  font-weight: bold;
 }
 
 .ethics-title {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.ethics-subtitle-main {
   margin: 0;
-  padding: 24px;
-  background: #f89b00; /* color from the image header */
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.05rem;
+  opacity: 0.9;
 }
 
 .ethics-guides-list {
-  padding: 24px;
+  padding: 32px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
+  background: #ffffff;
 }
 
-.ethics-guide-item {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 16px;
+.ethics-guide-card {
+  display: flex;
+  gap: 24px;
+  background: #fdfdfd;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.25s ease;
 }
 
-.ethics-guide-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.ethics-guide-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: #e2e8f0;
 }
 
-.ethics-guide-header {
+.ethics-guide-left {
+  flex: 0 0 150px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 8px;
+  align-items: flex-start;
+  gap: 8px;
+  border-right: 2px solid #f0f0f0;
+  padding-right: 16px;
 }
 
-.ethics-guide-title {
+.ethics-guide-num {
+  font-size: 0.85rem;
+  color: #f37021;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ethics-guide-topic {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.ethics-guide-values {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* Value Badges */
+.ethics-value-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  width: fit-content;
+}
+
+.badge-icon {
   font-size: 0.9rem;
-  color: #f89b00;
-  font-weight: bold;
+}
+
+.badge-initiative {
+  background-color: #f37021; /* 주도성 (주황) */
+  box-shadow: 0 2px 6px rgba(243, 112, 33, 0.2);
+}
+
+.badge-purpose {
+  background-color: #2bb673; /* 합목적성 (초록) */
+  box-shadow: 0 2px 6px rgba(43, 182, 115, 0.2);
+}
+
+.badge-safety {
+  background-color: #0072bc; /* 안전성 (파랑) */
+  box-shadow: 0 2px 6px rgba(0, 114, 188, 0.2);
+}
+
+.badge-transparency {
+  background-color: #e0ab00; /* 투명성 (노란색 계열, 가독성을 위해 살짝 어둡게 조정) */
+  box-shadow: 0 2px 6px rgba(224, 171, 0, 0.2);
+}
+
+.ethics-guide-right {
+  flex: 1;
 }
 
 .ethics-guide-subtitle {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.3;
 }
 
 .ethics-guide-desc {
   margin: 0;
   font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 .ethics-action-area {
-  padding: 24px;
-  background: #f9f9f9;
-  border-top: 1px solid #eee;
+  padding: 24px 32px;
+  background: #f7fafc;
+  border-top: 1px solid #edf2f7;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .ethics-checkbox-label {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #333;
   cursor: pointer;
+  user-select: none;
 }
 
 .ethics-checkbox {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #cbd5e0;
   cursor: pointer;
+  accent-color: #f37021;
+}
+
+.ethics-checkbox-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2d3748;
 }
 
 .ethics-start-button {
-  background: #f89b00;
+  background: linear-gradient(90deg, #f89b00 0%, #f37021 100%);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 12px 32px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  border-radius: 12px;
+  padding: 14px 36px;
+  font-size: 1.15rem;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(243, 112, 33, 0.3);
 }
 
 .ethics-start-button:hover:not(:disabled) {
-  background: #e08c00;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(243, 112, 33, 0.4);
+}
+
+.ethics-start-button:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .ethics-start-button:disabled {
-  background: #ccc;
+  background: #cbd5e0;
+  color: #a0aec0;
   cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive Web Design */
+@media (max-width: 768px) {
+  .ethics-gate-container {
+    max-height: 95vh;
+  }
+  
+  .ethics-guide-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .ethics-guide-left {
+    flex: none;
+    border-right: none;
+    border-bottom: 2px solid #f0f0f0;
+    padding-right: 0;
+    padding-bottom: 12px;
+    width: 100%;
+  }
+
+  .ethics-guide-values {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .ethics-action-area {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .ethics-start-button {
+    width: 100%;
+    text-align: center;
+  }
 }

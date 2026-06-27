@@ -19,7 +19,9 @@ function App() {
 
   const [pickedStudents, setPickedStudents] = useState([]);
   const [isPicking, setIsPicking] = useState(false);
-  const [isEthicsAgreed, setIsEthicsAgreed] = useState(false);
+  const [isEthicsAgreed, setIsEthicsAgreed] = useState(() => {
+    return localStorage.getItem('randomPicker_ethicsAgreed') === 'true';
+  });
   const [activeModal, setActiveModal] = useState(null); // 'terms', 'privacy', or null
 
   useEffect(() => {
@@ -30,10 +32,17 @@ function App() {
     localStorage.setItem('randomPicker_secretOrder', JSON.stringify(secretOrder));
   }, [secretOrder]);
 
+  const handleStartGame = () => {
+    localStorage.setItem('randomPicker_ethicsAgreed', 'true');
+    setIsEthicsAgreed(true);
+  };
+
+  if (!isEthicsAgreed) {
+    return <EthicsGate onStart={handleStartGame} />;
+  }
+
   return (
     <>
-      {!isEthicsAgreed && <EthicsGate onStart={() => setIsEthicsAgreed(true)} />}
-      
       <nav className="app-nav">
         <span className="app-nav-title">발표자 뽑기</span>
       </nav>
