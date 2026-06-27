@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     watch: {
-      ignored: ['**/*.hwp', '**/*.hwpx', '**/*.pdf']
+      ignored: ['**/*.hwp', '**/*.hwpx', '**/*.pdf', '**/*.png', '**/*.docx']
     }
   }
 })
