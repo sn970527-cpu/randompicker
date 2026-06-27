@@ -4,6 +4,8 @@ import StudentInput from './components/StudentInput';
 import SlotMachine from './components/SlotMachine';
 import ResultBoard from './components/ResultBoard';
 import EthicsGate from './components/EthicsGate';
+import Footer from './components/Footer';
+import InfoModal from './components/InfoModal';
 
 function App() {
   const [students, setStudents] = useState(() => {
@@ -18,6 +20,7 @@ function App() {
   const [pickedStudents, setPickedStudents] = useState([]);
   const [isPicking, setIsPicking] = useState(false);
   const [isEthicsAgreed, setIsEthicsAgreed] = useState(false);
+  const [activeModal, setActiveModal] = useState(null); // 'terms', 'privacy', or null
 
   useEffect(() => {
     localStorage.setItem('randomPicker_students', JSON.stringify(students));
@@ -35,7 +38,7 @@ function App() {
         <span className="app-nav-title">발표자 뽑기</span>
       </nav>
 
-      <div style={{ padding: '0 24px 80px', maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+      <div style={{ padding: '0 24px 80px', maxWidth: '800px', margin: '0 auto', width: '100%', minHeight: 'calc(100vh - 200px)' }}>
         <div className="page-hero">
           <h1 className="page-title">발표자 뽑기</h1>
           <p className="page-subtitle">무작위로 발표자를 선발합니다</p>
@@ -70,6 +73,12 @@ function App() {
           />
         )}
       </div>
+
+      <Footer onOpenModal={(type) => setActiveModal(type)} />
+
+      {activeModal && (
+        <InfoModal type={activeModal} onClose={() => setActiveModal(null)} />
+      )}
     </>
   );
 }
