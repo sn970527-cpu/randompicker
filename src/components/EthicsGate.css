@@ -1,0 +1,129 @@
+.ethics-gate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+}
+
+.ethics-gate-container {
+  background: white;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.ethics-title {
+  margin: 0;
+  padding: 24px;
+  background: #f89b00; /* color from the image header */
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ethics-guides-list {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ethics-guide-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.ethics-guide-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ethics-guide-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.ethics-guide-title {
+  font-size: 0.9rem;
+  color: #f89b00;
+  font-weight: bold;
+}
+
+.ethics-guide-subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.ethics-guide-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.ethics-action-area {
+  padding: 24px;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ethics-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.ethics-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.ethics-start-button {
+  background: #f89b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ethics-start-button:hover:not(:disabled) {
+  background: #e08c00;
+  transform: translateY(-2px);
+}
+
+.ethics-start-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

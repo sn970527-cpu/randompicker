@@ -3,6 +3,7 @@ import './index.css';
 import StudentInput from './components/StudentInput';
 import SlotMachine from './components/SlotMachine';
 import ResultBoard from './components/ResultBoard';
+import EthicsGate from './components/EthicsGate';
 
 function App() {
   const [students, setStudents] = useState(() => {
@@ -16,6 +17,7 @@ function App() {
 
   const [pickedStudents, setPickedStudents] = useState([]);
   const [isPicking, setIsPicking] = useState(false);
+  const [isEthicsAgreed, setIsEthicsAgreed] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('randomPicker_students', JSON.stringify(students));
@@ -27,6 +29,8 @@ function App() {
 
   return (
     <>
+      {!isEthicsAgreed && <EthicsGate onStart={() => setIsEthicsAgreed(true)} />}
+      
       <nav className="app-nav">
         <span className="app-nav-title">발표자 뽑기</span>
       </nav>
