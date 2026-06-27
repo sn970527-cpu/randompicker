@@ -6,7 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     watch: {
-      ignored: ['**/*.hwp', '**/*.hwpx', '**/*.pdf', '**/*.png', '**/*.docx']
+      ignored: [
+        '**/sn970527-cpu_bamti_files/**',
+        '**/*.hwp',
+        '**/*.hwpx',
+        '**/*.pdf',
+        '**/*.png',
+        '**/*.docx'
+      ]
     }
   }
 })
